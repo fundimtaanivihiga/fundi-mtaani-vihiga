@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundi Mtagani Vihiga — Find Skilled Fundis in Vihiga County</title>
+<meta name="description" content="Fundi Mtagani Vihiga connects you with trusted electricians, plumbers, welders, masons and carpenters across Vihiga County.">
+<style>
+/* ============ BASE ============ */
+:root{
+  --primary:#f97316; --primary-dark:#ea580c; --dark:#0f172a; --dark-2:#1e293b;
+  --gray:#64748b; --light:#f8fafc; --border:#e2e8f0; --white:#fff;
+  --radius:14px; --shadow:0 10px 30px rgba(15,23,42,.12);
+  --whatsapp:#25d366;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--dark);background:var(--white);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.container{width:min(1200px,92%);margin-inline:auto}
+.section{padding:80px 0}
+.section-head{text-align:center;max-width:720px;margin:0 auto 44px}
+.section-head h2{font-size:clamp(1.6rem,3.5vw,2.3rem);margin-bottom:12px;line-height:1.2}
+.section-head p{color:var(--gray)}
+.flash{animation:flash 1.4s ease}
+@keyframes flash{0%,100%{box-shadow:none}30%{box-shadow:0 0 0 6px rgba(249,115,22,.35)}}
+
+/* ============ BUTTONS / CHIPS ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:10px;font-weight:600;font-size:.95rem;transition:.25s;white-space:nowrap}
+.btn-sm{padding:9px 18px;font-size:.85rem}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 8px 20px rgba(249,115,22,.35)}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+.btn-outline:hover{background:#fff;color:var(--dark)}
+.btn-outline-dark{background:transparent;color:var(--dark);border:2px solid var(--border)}
+.btn-outline-dark:hover{border-color:var(--primary);color:var(--primary-dark)}
+.btn-whatsapp{background:var(--whatsapp);color:#fff}
+.btn-whatsapp:hover{background:#1eb455}
+.chip{display:inline-block;background:var(--primary);color:#fff;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;padding:4px 10px;border-radius:999px}
+.chip-sm{font-size:.65rem;padding:3px 9px}
+
+/* ============ HEADER ============ */
+#header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:18px 0;
+  background:rgba(15,23,42,.92);backdrop-filter:blur(12px);transition:padding .3s,background .3s,box-shadow .3s}
+#header.shrink{padding:8px 0;background:rgba(15,23,42,.98);box-shadow:0 6px 24px rgba(0,0,0,.25)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;font-size:1.02rem;letter-spacing:.01em}
+.brand img{width:42px;height:42px;border-radius:10px;object-fit:cover;transition:.3s;flex-shrink:0}
+#header.shrink .brand img{width:32px;height:32px}
+.brand span small{display:block;font-size:.65rem;font-weight:500;color:#94a3b8;letter-spacing:.08em;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a,.nav .drop-btn{color:#cbd5e1;font-size:.9rem;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:6px;transition:.2s;font-weight:500}
+.nav a:hover,.nav .drop-btn:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav .nav-cta{background:var(--primary);color:#fff;margin-left:6px}
+.nav .nav-cta:hover{background:var(--primary-dark);color:#fff}
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;top:calc(100% + 10px);left:0;min-width:220px;background:#fff;border-radius:12px;box-shadow:var(--shadow);padding:8px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.22s;display:flex;flex-direction:column;z-index:1002}
+.dropdown:hover .dropdown-menu,.dropdown:focus-within .dropdown-menu{opacity:1;visibility:visible;transform:none}
+.dropdown-menu a{color:var(--dark-2);padding:10px 12px;border-radius:8px;font-size:.88rem}
+.dropdown-menu a:hover{background:#fff7ed;color:var(--primary-dark)}
+.menu-toggle{display:none;color:#fff;font-size:1.5rem;line-height:1;padding:6px 10px}
+@media(max-width:1080px){
+  .menu-toggle{display:block}
+  .nav{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:min(320px,86vw);background:var(--dark-2);
+    flex-direction:column;align-items:stretch;padding:88px 18px 30px;gap:4px;transform:translateX(100%);
+    transition:transform .3s;overflow-y:auto;z-index:1001}
+  .nav.open{transform:none}
+  .nav a,.nav .drop-btn{width:100%}
+  .nav .nav-cta{margin-left:0;margin-top:10px;justify-content:center}
+  .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;background:rgba(255,255,255,.05);
+    box-shadow:none;margin-top:4px;display:none}
+  .dropdown.open .dropdown-menu{display:flex}
+  .dropdown-menu a{color:#cbd5e1}
+  .dropdown-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+}
+
+/* ============ HERO ============ */
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 60px;color:#fff;position:relative;
+  background:linear-gradient(rgba(10,15,30,.62),rgba(10,15,30,.78)),url('https://picsum.photos/seed/fundihero/1920/1080') center/cover no-repeat}
+.hero-inner{max-width:840px;margin-inline:auto;text-align:center}
+.hero h1{font-size:clamp(1.9rem,5vw,3.3rem);line-height:1.15;margin-bottom:16px;font-weight:800;letter-spacing:-.02em}
+.hero h1 em{color:var(--primary);font-style:normal}
+.hero .lead{font-size:clamp(.95rem,2vw,1.12rem);color:#e2e8f0;max-width:640px;margin:0 auto 28px}
+.hero-card{background:rgba(255,255,255,.1);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.25);
+  border-radius:18px;padding:18px;max-width:620px;margin:0 auto 28px;display:flex;flex-direction:column;gap:12px}
+.hero-card select,.hero-card input{width:100%;padding:13px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.3);
+  background:rgba(255,255,255,.95);color:var(--dark);font-size:.92rem;font-family:inherit;outline:none}
+.hero-card select:focus,.hero-card input:focus{box-shadow:0 0 0 3px rgba(249,115,22,.45)}
+.search-row{display:flex;gap:10px}
+.search-row input{flex:1}
+.hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:nowrap}
+.hero-actions .btn{flex:0 1 auto}
+@media(max-width:420px){.hero-actions{gap:8px}.hero-actions .btn{padding:12px 14px;font-size:.82rem}}
+
+/* ============ EXPLORE ============ */
+.explore-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.explore-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:230px;display:flex;
+  align-items:flex-end;padding:24px;background-size:cover;background-position:center;transition:.35s}
+.explore-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.explore-card.main{grid-column:1/-1;min-height:320px}
+.explore-card::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 15%,rgba(0,0,0,.88))}
+.explore-card-body{position:relative;z-index:1;color:#fff;max-width:560px}
+.explore-card-body h3{font-size:1.35rem;margin:10px 0 6px}
+.explore-card-body p{font-size:.9rem;color:#e2e8f0;margin-bottom:14px}
+@media(max-width:760px){.explore-grid{grid-template-columns:1fr}.explore-card.main{min-height:260px}}
+
+/* ============ FEATURED CAROUSEL ============ */
+.featured-track{position:relative;display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;
+  padding:6px 4px 24px;scrollbar-width:none}
+.featured-track::-webkit-scrollbar{display:none}
+.featured-card{scroll-snap-align:start;flex:0 0 clamp(258px,32%,372px);background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.fc-media{position:relative;height:200px}
+.fc-media img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;top:12px;padding:5px 12px;border-radius:999px;font-size:.68rem;font-weight:800;letter-spacing:.04em}
+.badge-featured{left:12px;background:var(--primary);color:#fff}
+.badge-cat{right:12px;background:rgba(15,23,42,.88);color:#fff;text-transform:uppercase}
+.fc-body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.fc-body h3{font-size:1.08rem}
+.fc-loc{font-size:.82rem;color:var(--gray)}
+.fc-body p{font-size:.88rem;color:var(--gray);flex:1}
+.fc-body .btn{align-self:flex-start;margin-top:6px}
+.featured-cta{text-align:center;margin-top:18px}
+
+/* ============ CATEGORY SECTIONS ============ */
+.cat-section:nth-child(even){background:var(--light)}
+.cat-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.cat-head h2{font-size:clamp(1.4rem,3vw,1.9rem)}
+.cat-head p{color:var(--gray);font-size:.92rem;max-width:640px}
+.cat-scroll{display:flex;gap:18px;overflow-x:auto;padding:4px 2px 20px;scrollbar-width:thin}
+.cat-card{flex:0 0 296px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+  display:flex;flex-direction:column;transition:.3s}
+.cat-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.cat-card img{width:100%;height:170px;object-fit:cover}
+.cat-card-body{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cat-card-body h4{font-size:1rem}
+.cat-card-body p{font-size:.85rem;color:var(--gray);flex:1}
+.cat-card-body .btn{align-self:flex-start}
+
+/* ============ TABS ============ */
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:0 2px 14px;justify-content:center;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{padding:10px 18px;border-radius:999px;background:#f1f5f9;color:var(--gray);font-weight:600;font-size:.88rem;white-space:nowrap;transition:.2s}
+.tab:hover{background:#e2e8f0;color:var(--dark)}
+.tab.active{background:var(--primary);color:#fff}
+@media(max-width:760px){.tabs{justify-content:flex-start}}
+.tab-panel{display:none}
+.tab-panel.active{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ============ GALLERY ============ */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.gallery-item{position:relative;aspect-ratio:1;border-radius:12px;overflow:hidden;cursor:pointer;background:#e2e8f0}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:.45s}
+.gallery-item:hover img{transform:scale(1.09)}
+.gallery-item::after{content:'🔍';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;background:rgba(15,23,42,.45);opacity:0;transition:.3s}
+.gallery-item:hover::after{opacity:1}
+@media(max-width:640px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+/* ============ SERVICES ============ */
+.service-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.service-list li{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;
+  font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:10px;transition:.2s}
+.service-list li:hover{border-color:var(--primary);transform:translateY(-2px)}
+.service-list li::before{content:'✓';color:var(--primary);font-weight:800;flex-shrink:0}
+
+/* ============ LOCATIONS ============ */
+.location-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.location-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px 14px;text-align:center;
+  font-weight:700;font-size:.95rem;transition:.25s;display:flex;flex-direction:column;gap:4px;align-items:center}
+.location-card small{font-weight:500;font-size:.75rem;color:var(--gray)}
+.location-card:hover{border-color:var(--primary);color:var(--primary-dark);transform:translateY(-3px);box-shadow:var(--shadow)}
+
+/* ============ JOIN / SPLIT ============ */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.split img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;height:100%;object-fit:cover;max-height:460px}
+.split h2{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:14px;line-height:1.2}
+.split p{color:var(--gray);margin-bottom:14px}
+.steps{list-style:none;display:flex;flex-direction:column;gap:12px;margin:18px 0 24px}
+.steps li{display:flex;gap:12px;align-items:flex-start;font-size:.92rem}
+.steps li b{display:inline-flex;width:26px;height:26px;border-radius:50%;background:#fff7ed;color:var(--primary-dark);
+  align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+@media(max-width:860px){.split{grid-template-columns:1fr;gap:28px}.split img{order:-1}}
+
+/* ============ TESTIMONIALS ============ */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.testi{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:0 4px 16px rgba(15,23,42,.05)}
+.testi .stars{color:#f59e0b;margin-bottom:10px;letter-spacing:2px}
+.testi p{font-size:.92rem;color:var(--dark-2);font-style:italic;margin-bottom:14px}
+.testi .who{display:flex;align-items:center;gap:10px}
+.testi .who img{width:40px;height:40px;border-radius:50%;object-fit:cover}
+.testi .who strong{font-size:.88rem;display:block}
+.testi .who small{color:var(--gray);font-size:.76rem}
+
+/* ============ FAQ ============ */
+.faq-wrap{max-width:820px;margin-inline:auto}
+.faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff}
+.faq-q{width:100%;text-align:left;padding:18px 20px;font-weight:600;font-size:.95rem;display:flex;
+  justify-content:space-between;gap:14px;align-items:center;color:var(--dark)}
+.faq-q::after{content:'+';font-size:1.35rem;color:var(--primary);transition:.25s;line-height:1}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 20px}
+.faq-item.open .faq-a{max-height:320px;padding-bottom:18px}
+.faq-a p{font-size:.9rem;color:var(--gray)}
+
+/* ============ CONTACT ============ */
+.contact-card{background:var(--dark);color:#fff;border-radius:20px;padding:44px;display:grid;
+  grid-template-columns:1fr 1fr;gap:40px;align-items:center;overflow:hidden}
+.contact-card h2{font-size:clamp(1.4rem,3vw,1.9rem);margin-bottom:12px}
+.contact-card p{color:#cbd5e1;font-size:.94rem;margin-bottom:20px}
+.contact-actions{display:flex;gap:12px;flex-wrap:wrap}
+.contact-card img{border-radius:14px;max-height:300px;width:100%;object-fit:cover}
+@media(max-width:820px){.contact-card{grid-template-columns:1fr;padding:30px}.contact-card img{order:-1;max-height:220px}}
+
+/* ============ FOOTER ============ */
+footer{background:#020617;color:#94a3b8;padding:60px 0 26px;font-size:.88rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:36px;margin-bottom:40px}
+footer h4{color:#fff;font-size:.95rem;margin-bottom:16px;letter-spacing:.02em}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+footer a:hover{color:var(--primary)}
+.footer-brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:700;margin-bottom:14px}
+.footer-brand img{width:40px;height:40px;border-radius:10px;object-fit:cover}
+.footer-bottom{border-top:1px solid #1e293b;padding-top:22px;display:flex;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;font-size:.8rem}
+@media(max-width:880px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
+
+/* ============ MODALS ============ */
+.modal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:14px}
+.modal.open{display:flex}
+.modal-backdrop{position:absolute;inset:0;background:rgba(2,6,23,.72);backdrop-filter:blur(4px)}
+.modal-box{position:relative;background:#fff;border-radius:18px;width:100%;max-width:920px;
+  max-height:95vh;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.45);
+  animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:scale(.97) translateY(10px)}to{opacity:1;transform:none}}
+.modal-top{display:flex;justify-content:flex-end;padding:12px 14px 0}
+.modal-close{width:38px;height:38px;border-radius:50%;background:#f1f5f9;color:var(--dark-2);
+  font-size:1rem;font-weight:700;display:flex;align-items:center;justify-content:center;transition:.2s}
+.modal-close:hover{background:#fee2e2;color:#dc2626}
+.modal-body{overflow-y:auto;padding:0 26px 28px}
+@media(max-width:600px){.modal-body{padding:0 16px 22px}}
+
+/* profile modal */
+.pm-media img,.pm-media video{width:100%;border-radius:12px;max-height:380px;object-fit:cover;background:#000}
+.pm-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0 6px}
+.pm-head h3{font-size:1.35rem}
+.pm-loc{color:var(--gray);font-size:.88rem;margin-bottom:12px}
+.pm-info > p{font-size:.93rem;color:var(--dark-2);margin-bottom:16px}
+.pm-meta{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--light);border-radius:12px;padding:16px;margin-bottom:18px}
+.pm-meta div{font-size:.88rem;color:var(--gray)}
+.pm-meta strong{color:var(--dark);display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+.pm-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.pm-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px;margin-top:12px}
+.pm-gallery img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+@media(max-width:480px){.pm-meta{grid-template-columns:1fr}}
+
+/* lightbox */
+.lightbox{max-width:760px}
+.lb-stage{position:relative;background:#000;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.lb-stage img{max-height:62vh;width:100%;object-fit:contain}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;
+  background:rgba(255,255,255,.9);color:var(--dark);font-size:1.4rem;font-weight:700;display:flex;
+  align-items:center;justify-content:center;transition:.2s;z-index:2}
+.lb-nav:hover{background:var(--primary);color:#fff}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-caption{padding:16px 4px 0}
+.lb-caption h4{font-size:1.05rem;margin-bottom:4px}
+.lb-caption p{font-size:.86rem;color:var(--gray)}
+
+/* location modal */
+.loc-tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 16px;scrollbar-width:none}
+.loc-tabs::-webkit-scrollbar{display:none}
+.loc-tabs .tab{font-size:.82rem;padding:8px 15px}
+.loc-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.loc-item{border:1px solid var(--border);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:4px}
+.loc-item strong{font-size:.95rem}
+.loc-item small{color:var(--gray);font-size:.78rem}
+.loc-item a{margin-top:8px;font-size:.82rem;font-weight:700;color:var(--whatsapp)}
+
+/* form */
+.form-sec{border:1px solid var(--border);border-radius:14px;padding:20px;margin-bottom:18px}
+.form-sec h4{font-size:1rem;margin-bottom:4px}
+.form-sec > small{display:block;color:var(--gray);font-size:.82rem;margin-bottom:16px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--dark-2)}
+.field input,.field select,.field textarea{width:100%;padding:11px 13px;border:1px solid var(--border);
+  border-radius:9px;font-family:inherit;font-size:.9rem;color:var(--dark);background:#fff;outline:none;transition:.2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(249,115,22,.15)}
+.field textarea{resize:vertical;min-height:84px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.grid-2{grid-template-columns:1fr}}
+.radio-row{display:flex;flex-wrap:wrap;gap:10px}
+.radio-row label{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--border);
+  border-radius:9px;font-size:.85rem;font-weight:500;cursor:pointer;transition:.2s;background:#fff}
+.radio-row label:hover{border-color:var(--primary)}
+.radio-row input{accent-color:var(--primary)}
+.hint{font-size:.75rem;color:var(--gray);margin-top:6px}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+  <div class="container header-inner">
+    <a href="#home" class="brand">
+      <img src="https://picsum.photos/seed/fundilogo/100/100" alt="Fundi Mtagani Vihiga logo">
+      <span>Fundi Mtagani<small>Vihiga County</small></span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+
+    <nav class="nav" id="nav">
+      <a href="#home">Home</a>
+      <a href="#explore">Find a Fundi</a>
+      <div class="dropdown">
+        <button class="drop-btn" id="catDropBtn">Categories ▾</button>
+        <div class="dropdown-menu">
+          <a href="#electricians">Electricians</a>
+          <a href="#plumbers">Plumbers</a>
+          <a href="#welders">Welders</a>
+          <a href="#masons">Masons &amp; Builders</a>
+          <a href="#carpenters">Carpenters</a>
+        </div>
+      </div>
+      <a href="#gallery">Products</a>
+      <a href="#featured">Advertise With Us</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+      <a href="#" class="nav-cta" data-open-register>Become a Fundi</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <h1>Find Trusted <em>Fundis</em> in Vihiga County</h1>
+    <p class="lead">Fundi Mtagani Vihiga connects you with skilled, verified electricians, plumbers, welders, masons and carpenters near you — quickly and easily.</p>
+
+    <div class="hero-card">
+      <select id="heroCategory" aria-label="Choose a category">
+        <option value="">All Categories</option>
+        <option value="electricians">Electricians</option>
+        <option value="plumbers">Plumbers</option>
+        <option value="welders">Welders</option>
+        <option value="masons">Masons &amp; Builders</option>
+        <option value="carpenters">Carpenters</option>
+      </select>
+      <div class="search-row">
+        <input type="text" id="heroSearch" placeholder="e.g. Electricians in Mbale, Carpenters in Majengo">
+        <button class="btn btn-primary" id="heroSearchBtn">Search</button>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#" class="btn btn-primary" data-open-register>Become a Fundi</a>
+      <a href="#explore" class="btn btn-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPLORE ================= -->
+<section class="section" id="explore">
+  <div class="container">
+    <div class="section-head">
+      <h2>Explore Skilled Fundis Serving All of Vihiga County</h2>
+      <p>From wiring to welding, plumbing to carpentry — browse our verified trades and find the right professional for your project.</p>
+    </div>
+
+    <div class="explore-grid">
+      <article class="explore-card main" style="background-image:url('https://picsum.photos/seed/electrician1/1200/600')">
+        <div class="explore-card-body">
+          <span class="chip">Most Requested</span>
+          <h3>Electricians</h3>
+          <p>Certified wiring, lighting, fault diagnosis and solar installation by vetted professionals.</p>
+          <a href="#electricians" class="btn btn-sm btn-primary">View Electricians</a>
+        </div>
+      </article>
+
+      <article class="explore-card" style="background-image:url('https://picsum.photos/seed/plumber1/700/600')">
+        <div class="explore-card-body">
+          <h3>Plumbers</h3>
+          <p>Leak detection, pipe fitting and bathroom plumbing.</p>
+          <a href="#plumbers" class="btn btn-sm btn-primary">View Plumbers</a>
+        </div>
+      </article>
+
+      <article class="explore-card" style="background-image:url('https://picsum.photos/seed/welder1/700/600')">
+        <div class="explore-card-body">
+          <h3>Welders</h3>
+          <p>Gates, grills, metal doors and custom fabrication.</p>
+          <a href="#welders" class="btn btn-sm btn-primary">View Welders</a>
+        </div>
+      </article>
+
+      <article class="explore-card" style="background-image:url('https://picsum.photos/seed/mason1/700/600')">
+        <div class="explore-card-body">
+          <h3>Masons &amp; Builders</h3>
+          <p>Wall construction, plastering, tiling and renovation.</p>
+          <a href="#masons" class="btn btn-sm btn-primary">View Masons</a>
+        </div>
+      </article>
+
+      <article class="explore-card" style="background-image:url('https://picsum.photos/seed/carpenter1/700/600')">
+        <div class="explore-card-body">
+          <h3>Carpenters</h3>
+          <p>Furniture, cabinets, doors and gypsum ceilings.</p>
+          <a href="#carpenters" class="btn btn-sm btn-primary">View Carpenters</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURED ================= -->
+<section class="section" id="featured" style="background:var(--light)">
+  <div class="container">
+    <div class="section-head">
+      <h2>Meet Featured Fundis</h2>
+      <p>Discover skilled professionals showcasing their services and recent works. Featured profiles are premium placements chosen by our top-rated fundis.</p>
+    </div>
+
+    <div class="featured-track" id="featuredTrack">
+
+      <article class="featured-card">
+        <div class="fc-media">
+          <img src="https://picsum.photos/seed/featured1/700/500" alt="James Otieno" loading="lazy">
+          <span class="badge badge-featured">★ Featured</span>
+          <span class="badge badge-cat">Electrician</span>
+        </div>
+        <div class="fc-body">
+          <h3>James Otieno</h3>
+          <p class="fc-loc">📍 Mbale, Vihiga</p>
+          <p>Licensed electrician with 12 years of experience in residential wiring, solar installation and industrial maintenance.</p>
+          <button class="btn btn-sm btn-primary" data-profile
+            data-name="James Otieno" data-cat="Electrician"
+            data-img="https://picsum.photos/seed/featured1/900/600"
+            data-gallery="https://picsum.photos/seed/fw1/400/400,https://picsum.photos/seed/fw2/400/400,https://picsum.photos/seed/fw3/400/400"
+            data-bio="Licensed electrician with 12 years of experience in residential wiring, solar installation and industrial maintenance. Known for clean workmanship and honest pricing across Vihiga County."
+            data-loc="Mbale, Vihiga" data-phone="+254712340001"
+            data-price="Consultation KSh 500 · House wiring from KSh 3,500">View Work</button>
+        </div>
+      </article>
+
+      <article class="featured-card">
+        <div class="fc-media">
+          <img src="https://picsum.photos/seed/featured2/700/500" alt="Mercy Achieng" loading="lazy">
+          <span class="badge badge-featured">★ Featured</span>
+          <span class="badge badge-cat">Plumber</span>
+        </div>
+        <div class="fc-body">
+          <h3>Mercy Achieng</h3>
+          <p class="fc-loc">📍 Chavakali, Vihiga</p>
+          <p>Specialist in leak detection, bathroom fitting and water tank installation. Fast response and neat finishing.</p>
+          <button class="btn btn-sm btn-primary" data-profile
+            data-name="Mercy Achieng" data-cat="Plumber"
+            data-img="https://picsum.photos/seed/featured2/900/600"
+            data-gallery="https://picsum.photos/seed/fw4/400/400,https://picsum.photos/seed/fw5/400/400"
+            data-bio="Plumbing specialist with 9 years of hands-on experience in domestic and commercial plumbing. Mercy handles leak detection, bathroom fitting, water tank installation and drainage repairs."
+            data-loc="Chavakali, Vihiga" data-phone="+254712340002"
+            data-price="Call-out KSh 400 · Bathroom fitting from KSh 4,000">View Work</button>
+        </div>
+      </article>
+
+      <article class="featured-card">
+        <div class="fc-media">
+          <img src="https://picsum.photos/seed/featured3/700/500" alt="Joseph Ouma" loading="lazy">
+          <span class="badge badge-featured">★ Featured</span>
+          <span class="badge badge-cat">Welder</span>
+        </div>
+        <div class="fc-body">
+          <h3>Joseph Ouma</h3>
+          <p class="fc-loc">📍 Luanda, Vihiga</p>
+          <p>Custom gate fabrication, grills and metal doors with a modern finish. Over 200 completed projects.</p>
+          <button class="btn btn-sm btn-primary" data-profile
+            data-name="Joseph Ouma" data-cat="Welder"
+            data-img="https://picsum.photos/seed/featured3/900/600"
+            data-gallery="https://picsum.photos/seed/fw6/400/400,https://picsum.photos/seed/fw7/400/400,https://picsum.photos/seed/fw8/400/400"
+            data-bio="Fabrication expert specialising in custom gates, window grills, metal doors and steel structures. Joseph combines strong construction with modern design finishing."
+            data-loc="Luanda, Vihiga" data-phone="+254712340003"
+            data-price="Quotation free · Gates from KSh 18,000">View Work</button>
+        </div>
+      </article>
+
+      <article class="featured-card">
+        <div class="fc-media">
+          <img src="https://picsum.photos/seed/featured4/700/500" alt="Ann Muthoni" loading="lazy">
+          <span class="badge badge-featured">★ Featured</span>
+          <span class="badge badge-cat">Mason</span>
+        </div>
+        <div class="fc-body">
+          <h3>Ann Muthoni</h3>
+          <p class="fc-loc">📍 Sabatia, Vihiga</p>
+          <p>Building, plastering and tiling expert with an eye for detail. Trusted by homeowners and contractors.</p>
+          <button class="btn btn-sm btn-primary" data-profile
+            data-name="Ann Muthoni" data-cat="Mason"
+            data-img="https://picsum.photos/seed/featured4/900/600"
+            data-gallery="https://picsum.photos/seed/fw9/400/400,https://picsum.photos/seed/fw10/400/400"
+            data-bio="Experienced mason and builder offering wall construction, plastering, tiling, foundation work and general renovation. Ann leads a small trusted crew for larger projects."
+            data-loc="Sabatia, Vihiga" data-phone="+254712340004"
+            data-price="Site visit free · Tiling from KSh 450/m²">View Work</button>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="featured-cta">
+      <button class="btn btn-primary" data-open-featured-form>Become a Featured Fundi</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORY: ELECTRICIANS ================= -->
+<section class="section cat-section" id="electricians">
+  <div class="container">
+    <div class="cat-head">
+      <div>
+        <h2>Electricians</h2>
+        <p>Wiring, lighting, sockets, fault diagnosis and maintenance by certified electricians across Vihiga County.</p>
+      </div>
+    </div>
+    <div class="cat-scroll">
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/elec1/600/400" alt="Peter Mwangi" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Electrician</span>
+          <h4>Peter Mwangi</h4>
+          <p>Certified electrician with 8+ years in residential wiring, fault diagnosis and maintenance.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Peter Mwangi" data-cat="Electrician"
+            data-img="https://picsum.photos/seed/elec1/900/600"
+            data-bio="Certified electrician with over 8 years of experience in residential wiring, electrical fault diagnosis and preventive maintenance. Peter serves Mbale and surrounding areas."
+            data-loc="Mbale, Vihiga" data-phone="+254712340011" data-price="Consultation KSh 500 · Wiring from KSh 3,000">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/elec2/600/400" alt="Grace Anyango" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Electrician</span>
+          <h4>Grace Anyango</h4>
+          <p>Solar installation and lighting specialist. Clean, safe and up to code installations.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Grace Anyango" data-cat="Electrician"
+            data-img="https://picsum.photos/seed/elec2/900/600"
+            data-bio="Solar and lighting specialist with 6 years of experience installing home solar systems, security lights and energy-efficient lighting solutions."
+            data-loc="Chavakali, Vihiga" data-phone="+254712340012" data-price="Solar assessment free · Installation from KSh 6,000">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/elec3/600/400" alt="Samuel Ochieng" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Electrician</span>
+          <h4>Samuel Ochieng</h4>
+          <p>Emergency electrical repairs and socket installation, available seven days a week.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Samuel Ochieng" data-cat="Electrician"
+            data-img="https://picsum.photos/seed/elec3/900/600"
+            data-bio="Emergency electrical repair specialist handling socket installation, rewiring and urgent fault fixing. Samuel is known for quick response times across Vihiga."
+            data-loc="Luanda, Vihiga" data-phone="+254712340013" data-price="Emergency call-out KSh 800">View More</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORY: PLUMBERS ================= -->
+<section class="section cat-section" id="plumbers">
+  <div class="container">
+    <div class="cat-head">
+      <div>
+        <h2>Plumbers</h2>
+        <p>Pipe installation, leak detection, tap and sink repairs, bathroom plumbing and drainage solutions.</p>
+      </div>
+    </div>
+    <div class="cat-scroll">
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/plum1/600/400" alt="David Otieno" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Plumber</span>
+          <h4>David Otieno</h4>
+          <p>Leak detection and pipe installation specialist with 10 years of field experience.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="David Otieno" data-cat="Plumber"
+            data-img="https://picsum.photos/seed/plum1/900/600"
+            data-bio="Plumbing veteran with 10 years of experience in pipe installation, leak detection and drainage repairs. David works with both PVC and galvanised systems."
+            data-loc="Mbale, Vihiga" data-phone="+254712340021" data-price="Call-out KSh 400 · Pipe work from KSh 2,500">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/plum2/600/400" alt="Mercy Achieng" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Plumber</span>
+          <h4>Mercy Achieng</h4>
+          <p>Bathroom fitting, tap repairs and water tank installation done neatly and on time.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Mercy Achieng" data-cat="Plumber"
+            data-img="https://picsum.photos/seed/plum2/900/600"
+            data-bio="Mercy specialises in bathroom fitting, tap and sink repairs, and water tank installation. She is trusted for neat finishing and punctual delivery."
+            data-loc="Chavakali, Vihiga" data-phone="+254712340022" data-price="Call-out KSh 400 · Bathroom fitting from KSh 4,000">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/plum3/600/400" alt="Brian Wekesa" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Plumber</span>
+          <h4>Brian Wekesa</h4>
+          <p>Drainage and sewer repairs, plus emergency plumbing for burst pipes.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Brian Wekesa" data-cat="Plumber"
+            data-img="https://picsum.photos/seed/plum3/900/600"
+            data-bio="Drainage and sewer specialist handling blocked drains, burst pipes and emergency plumbing call-outs across Vihiga County."
+            data-loc="Emuhaya, Vihiga" data-phone="+254712340023" data-price="Emergency call-out KSh 700">View More</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORY: WELDERS ================= -->
+<section class="section cat-section" id="welders">
+  <div class="container">
+    <div class="cat-head">
+      <div>
+        <h2>Welders</h2>
+        <p>Gate fabrication, window grills, metal doors, steel structures and welding repairs.</p>
+      </div>
+    </div>
+    <div class="cat-scroll">
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/weld1/600/400" alt="Joseph Ouma" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Welder</span>
+          <h4>Joseph Ouma</h4>
+          <p>Custom gates and grills with modern finishing. Over 200 projects completed.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Joseph Ouma" data-cat="Welder"
+            data-img="https://picsum.photos/seed/weld1/900/600"
+            data-bio="Fabrication expert specialising in custom gates, window grills, metal doors and steel structures, with a focus on modern design finishing."
+            data-loc="Luanda, Vihiga" data-phone="+254712340031" data-price="Free quotation · Gates from KSh 18,000">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/weld2/600/400" alt="Faith Njeri" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Welder</span>
+          <h4>Faith Njeri</h4>
+          <p>Metal furniture and window grill fabrication with precision welding.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Faith Njeri" data-cat="Welder"
+            data-img="https://picsum.photos/seed/weld2/900/600"
+            data-bio="Faith produces precision-welded metal furniture, window grills and decorative pieces. Her workshop handles both small and bulk orders."
+            data-loc="Hamisi, Vihiga" data-phone="+254712340032" data-price="Quotation free · Grills from KSh 3,500">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/weld3/600/400" alt="Kelvin Barasa" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Welder</span>
+          <h4>Kelvin Barasa</h4>
+          <p>Structural steel, welding repairs and on-site fabrication services.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Kelvin Barasa" data-cat="Welder"
+            data-img="https://picsum.photos/seed/weld3/900/600"
+            data-bio="Kelvin handles structural steel work, on-site welding repairs and custom fabrication for homes, shops and small factories."
+            data-loc="Sabatia, Vihiga" data-phone="+254712340033" data-price="Site visit free · Repairs from KSh 1,500">View More</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORY: MASONS ================= -->
+<section class="section cat-section" id="masons">
+  <div class="container">
+    <div class="cat-head">
+      <div>
+        <h2>Masons &amp; Builders</h2>
+        <p>Building and designing, wall construction, plastering, tiling, foundation work and renovation.</p>
+      </div>
+    </div>
+    <div class="cat-scroll">
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/mason1b/600/400" alt="Ann Muthoni" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Mason</span>
+          <h4>Ann Muthoni</h4>
+          <p>Building, plastering and tiling expert with an eye for detail and clean finishing.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Ann Muthoni" data-cat="Mason"
+            data-img="https://picsum.photos/seed/mason1b/900/600"
+            data-bio="Experienced mason and builder offering wall construction, plastering, tiling, foundation work and general renovation, leading a small trusted crew for larger projects."
+            data-loc="Sabatia, Vihiga" data-phone="+254712340041" data-price="Site visit free · Tiling from KSh 450/m²">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/mason2b/600/400" alt="Peter Odhiambo" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Mason</span>
+          <h4>Peter Odhiambo</h4>
+          <p>Foundation work and concrete structures built to standard and on schedule.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Peter Odhiambo" data-cat="Mason"
+            data-img="https://picsum.photos/seed/mason2b/900/600"
+            data-bio="Peter specialises in foundation work, concrete slabs and structural masonry. He has completed residential and commercial builds across Vihiga."
+            data-loc="Mbale, Vihiga" data-phone="+254712340042" data-price="Quotation free · Foundation work priced per project">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/mason3b/600/400" alt="Isaac Wafula" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Mason</span>
+          <h4>Isaac Wafula</h4>
+          <p>Renovation and general building repairs — bring an old space back to life.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Isaac Wafula" data-cat="Mason"
+            data-img="https://picsum.photos/seed/mason3b/900/600"
+            data-bio="Isaac handles renovation, general building repairs and finishing work. He is known for reviving older homes and shop spaces on a reasonable budget."
+            data-loc="Hamisi, Vihiga" data-phone="+254712340043" data-price="Assessment free · Renovation from KSh 15,000">View More</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORY: CARPENTERS ================= -->
+<section class="section cat-section" id="carpenters">
+  <div class="container">
+    <div class="cat-head">
+      <div>
+        <h2>Carpenters</h2>
+        <p>Furniture making, door installation, cabinets, wardrobes, shelving, gypsum and repairs.</p>
+      </div>
+    </div>
+    <div class="cat-scroll">
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/carp1/600/400" alt="Michael Kiptoo" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Carpenter</span>
+          <h4>Michael Kiptoo</h4>
+          <p>Custom furniture, wardrobes and cabinets built to fit your space perfectly.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Michael Kiptoo" data-cat="Carpenter"
+            data-img="https://picsum.photos/seed/carp1/900/600"
+            data-bio="Michael designs and builds custom furniture, wardrobes and kitchen cabinets. He works closely with clients to match their space and style."
+            data-loc="Mbale, Vihiga" data-phone="+254712340051" data-price="Design free · Wardrobes from KSh 22,000">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/carp2/600/400" alt="Esther Wanjiku" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Carpenter</span>
+          <h4>Esther Wanjiku</h4>
+          <p>Door installation, shelving and gypsum ceiling works done neatly.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Esther Wanjiku" data-cat="Carpenter"
+            data-img="https://picsum.photos/seed/carp2/900/600"
+            data-bio="Esther specialises in door installation, shelving and gypsum ceiling work. She is praised for clean finishing and tidy sites."
+            data-loc="Chavakali, Vihiga" data-phone="+254712340052" data-price="Doors from KSh 6,500 installed">View More</button>
+        </div>
+      </article>
+      <article class="cat-card">
+        <img src="https://picsum.photos/seed/carp3/600/400" alt="Daniel Musyoka" loading="lazy">
+        <div class="cat-card-body">
+          <span class="chip chip-sm">Carpenter</span>
+          <h4>Daniel Musyoka</h4>
+          <p>Furniture repairs and restoration — give your old pieces a second life.</p>
+          <button class="btn btn-sm btn-primary" data-profile data-name="Daniel Musyoka" data-cat="Carpenter"
+            data-img="https://picsum.photos/seed/carp3/900/600"
+            data-bio="Daniel offers furniture repairs, restoration and small bespoke carpentry jobs. He is the go-to fundi for fixing what others say cannot be fixed."
+            data-loc="Luanda, Vihiga" data-phone="+254712340053" data-price="Repairs from KSh 1,200">View More</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="section" id="gallery" style="background:var(--light)">
+  <div class="container">
+    <div class="section-head">
+      <h2>See What Our Fundis Do</h2>
+      <p>A showcase of completed works, achievements and projects from fundis across Vihiga County. Tap any image to view it larger.</p>
+    </div>
+    <div class="tabs" id="galleryTabs">
+      <button class="tab active" data-tab="electricians">Electricians</button>
+      <button class="tab" data-tab="plumbers">Plumbers</button>
+      <button class="tab" data-tab="welders">Welders</button>
+      <button class="tab" data-tab="masons">Masons</button>
+      <button class="tab" data-tab="carpenters">Carpenters</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <h2>What Services Do You Need?</h2>
+      <p>Browse common jobs and find skilled fundis who offer the best services for what you need.</p>
+    </div>
+
+    <div class="tabs" data-tabs="services">
+      <button class="tab active" data-tab="electricians">Electricians</button>
+      <button class="tab" data-tab="plumbers">Plumbers</button>
+      <button class="tab" data-tab="welders">Welders</button>
+      <button class="tab" data-tab="masons">Masons</button>
+      <button class="tab" data-tab="carpenters">Carpenters</button>
+    </div>
+
+    <div class="tab-panels" data-panels="services">
+      <div class="tab-panel active" data-panel="electricians">
+        <ul class="service-list">
+          <li>House Wiring</li><li>Lighting Installation</li><li>Socket Installation</li>
+          <li>Electrical Fault Diagnosis</li><li>Electrical Maintenance</li><li>Security Light Installation</li><li>Solar Panel Wiring</li>
+        </ul>
+      </div>
+      <div class="tab-panel" data-panel="plumbers">
+        <ul class="service-list">
+          <li>Pipe Installation</li><li>Tap &amp; Sink Repairs</li><li>Leak Detection</li>
+          <li>Bathroom Plumbing</li><li>Drainage Repairs</li><li>Water Tank Installation</li><li>Toilet Repairs</li>
+        </ul>
+      </div>
+      <div class="tab-panel" data-panel="welders">
+        <ul class="service-list">
+          <li>Gate Fabrication</li><li>Window Grills</li><li>Metal Doors</li>
+          <li>Steel Fabrication</li><li>Welding Repairs</li><li>Metal Furniture</li><li>Security Doors</li>
+        </ul>
+      </div>
+      <div class="tab-panel" data-panel="masons">
+        <ul class="service-list">
+          <li>Building &amp; Designing</li><li>Wall Construction</li><li>Plastering</li>
+          <li>Tiling</li><li>Foundation Work</li><li>Renovation</li><li>Concrete Works</li>
+        </ul>
+      </div>
+      <div class="tab-panel" data-panel="carpenters">
+        <ul class="service-list">
+          <li>Furniture Making</li><li>Door Installation</li><li>Cabinets &amp; Wardrobes</li>
+          <li>Shelving</li><li>Gypsum Ceiling</li><li>Furniture Repairs</li><li>Roofing</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOCATIONS ================= -->
+<section class="section" id="locations" style="background:var(--light)">
+  <div class="container">
+    <div class="section-head">
+      <h2>Find a Fundi Near You</h2>
+      <p>Select your location in Vihiga County to see the fundis available near you.</p>
+    </div>
+    <div class="location-grid">
+      <button class="location-card" data-location="mbale">Mbale<small>Town Centre</small></button>
+      <button class="location-card" data-location="chavakali">Chavakali<small>Market Area</small></button>
+      <button class="location-card" data-location="sabatia">Sabatia<small>Sub-County</small></button>
+      <button class="location-card" data-location="emuhaya">Emuhaya<small>Sub-County</small></button>
+      <button class="location-card" data-location="hamisi">Hamisi<small>Sub-County</small></button>
+      <button class="location-card" data-location="luanda">Luanda<small>Town</small></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOIN ================= -->
+<section class="section" id="join">
+  <div class="container split">
+    <div>
+      <h2>Are You a Skilled Fundi in Vihiga?</h2>
+      <p>Showcase your skills, share your completed work and help more customers discover your services.</p>
+      <ul class="steps">
+        <li><b>1</b><span><strong>Register</strong> — submit your skills, contact details and work samples.</span></li>
+        <li><b>2</b><span><strong>Get reviewed</strong> — your application is reviewed before your profile is published.</span></li>
+        <li><b>3</b><span><strong>Get discovered</strong> — once approved, customers can find your profile and contact you directly.</span></li>
+      </ul>
+      <button class="btn btn-primary" data-open-register>Register as a Fundi</button>
+    </div>
+    <img src="https://picsum.photos/seed/fundijoin/800/700" alt="Skilled fundi at work" loading="lazy">
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about" style="background:var(--light)">
+  <div class="container split">
+    <img src="https://picsum.photos/seed/aboutvihiga/800/600" alt="Vihiga community" loading="lazy">
+    <div>
+      <h2>About Fundi Mtagani Vihiga</h2>
+      <p>Fundi Mtagani Vihiga is a local platform built to connect the people of Vihiga County with trusted, skilled tradespeople. We believe that local skills should be easy to find, easy to trust and easy to hire.</p>
+      <p>Every profile is reviewed before it goes live, so customers can hire with confidence — and fundis can grow their business with a professional online presence.</p>
+      <button class="btn btn-outline-dark" data-open-about>View More</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section" id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <h2>What Customers Say About Us</h2>
+      <p>Real reviews from customers who found their fundi through Fundi Mtagani Vihiga.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"I found a plumber in Mbale within minutes. He fixed a leak that two other people had failed to find. Very impressed."</p>
+        <div class="who">
+          <img src="https://picsum.photos/seed/cust1/80/80" alt="" loading="lazy">
+          <div><strong>Alice K.</strong><small>Mbale</small></div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★★</div>
+        <p>"The welder I hired through this site did a beautiful gate for my shop. Clear pricing and no surprises."</p>
+        <div class="who">
+          <img src="https://picsum.photos/seed/cust2/80/80" alt="" loading="lazy">
+          <div><strong>Brian W.</strong><small>Luanda</small></div>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="stars">★★★★☆</div>
+        <p>"As a fundi, this platform has brought me more customers in three months than I got all last year."</p>
+        <div class="who">
+          <img src="https://picsum.photos/seed/cust3/80/80" alt="" loading="lazy">
+          <div><strong>Grace A.</strong><small>Chavakali</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section" id="faq" style="background:var(--light)">
+  <div class="container">
+    <div class="section-head">
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know about finding and hiring fundis on our platform.</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q">How do I find a fundi near me?</button>
+        <div class="faq-a"><p>Use the search bar on the homepage, choose a category from the dropdown, or click your location under "Find a Fundi Near You". You will see fundis available in your area with their contact details.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is Fundi Mtagani Vihiga free for customers?</button>
+        <div class="faq-a"><p>Yes. Searching for fundis and contacting them is completely free for customers. You only pay the fundi for the work they do.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How are fundis vetted?</button>
+        <div class="faq-a"><p>Every application is reviewed before a profile is published. We check skills, experience, work samples and contact details so that customers can hire with confidence.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I get featured on the homepage?</button>
+        <div class="faq-a"><p>The Featured Fundi section is a paid placement. Click "Become a Featured Fundi" to open the application form — we will contact you with the available packages.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I register as a fundi?</button>
+        <div class="faq-a"><p>Click "Become a Fundi" or "Register as a Fundi" anywhere on the site to open the registration form. Fill in your personal details, skills, location and work samples, then submit. We review every application.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I pay a fundi?</button>
+        <div class="faq-a"><p>Payment is arranged directly between you and the fundi. Always agree on the price before work begins, and confirm the payment method in advance.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <div>
+        <h2>Contact Us</h2>
+        <p>Questions, feedback or need help finding the right fundi? Reach out to our support team — we are happy to help.</p>
+        <div class="contact-actions">
+          <a href="mailto:fundimtagani@gmail.com" class="btn btn-primary">Email Support</a>
+          <a href="https://wa.me/254712340000" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp Us</a>
+          <button class="btn btn-outline" data-open-register>Submit Images/Videos</button>
+        </div>
+      </div>
+      <img src="https://picsum.photos/seed/contactfundi/700/500" alt="Fundi at work" loading="lazy">
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="https://picsum.photos/seed/fundilogo/100/100" alt="Fundi Mtagani Vihiga logo">
+          <span>Fundi Mtagani Vihiga</span>
+        </div>
+        <p>Connecting the people of Vihiga County with trusted, skilled fundis — electricians, plumbers, welders, masons and carpenters.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#explore">Find a Fundi</a></li>
+          <li><a href="#featured">Featured Fundis</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#faq">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#electricians">Electricians</a></li>
+          <li><a href="#plumbers">Plumbers</a></li>
+          <li><a href="#welders">Welders</a></li>
+          <li><a href="#masons">Masons &amp; Builders</a></li>
+          <li><a href="#carpenters">Carpenters</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:fundimtagani@gmail.com">fundimtagani@gmail.com</a></li>
+          <li><a href="https://wa.me/254712340000" target="_blank" rel="noopener">WhatsApp: +254 712 340 000</a></li>
+          <li>Mbale, Vihiga County, Kenya</li>
+          <li><a href="#" data-open-register>Become a Fundi</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Fundi Mtagani Vihiga. All rights reserved.</span>
+      <span>Built for the skilled hands of Vihiga County.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODAL: PROFILE ================= -->
+<div class="modal" id="profileModal" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box">
+    <div class="modal-top"><button class="modal-close" data-close aria-label="Close">✕</button></div>
+    <div class="modal-body" id="profileModalBody"></div>
+  </div>
+</div>
+
+<!-- ================= MODAL: GALLERY LIGHTBOX ================= -->
+<div class="modal" id="galleryModal" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box lightbox">
+    <div class="modal-top"><button class="modal-close" data-close aria-label="Close">✕</button></div>
+    <div class="modal-body">
+      <div class="lb-stage">
+        <img id="lbImage" src="" alt="">
+        <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+        <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+      </div>
+      <div class="lb-caption" id="lbCaption"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: LOCATION ================= -->
+<div class="modal" id="locationModal" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box">
+    <div class="modal-top"><button class="modal-close" data-close aria-label="Close">✕</button></div>
+    <div class="modal-body">
+      <h3 id="locTitle" style="margin-bottom:4px"></h3>
+      <p style="color:var(--gray);font-size:.86rem;margin-bottom:14px">Browse fundis by category in this location.</p>
+      <div class="loc-tabs" id="locTabs"></div>
+      <div class="loc-list" id="locList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: FEATURED FORM ================= -->
+<div class="modal" id="featuredFormModal" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box" style="max-width:640px">
+    <div class="modal-top"><button class="modal-close" data-close aria-label="Close">✕</button></div>
+    <div class="modal-body">
+      <h3 style="margin-bottom:6px">Become a Featured Fundi</h3>
+      <p style="color:var(--gray);font-size:.88rem;margin-bottom:18px">
+        <strong>Please note:</strong> the Featured Fundi section is a <strong>paid placement</strong>. Fill in this form and our team will contact you with the available packages.
+      </p>
+      <form action="https://formsubmit.co/fundimtagani@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Featured Fundi Application - Fundi Mtagani Vihiga">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <div class="field"><label>Full Name</label><input type="text" name="name" required></div>
+        <div class="grid-2">
+          <div class="field"><label>Phone Number</label><input type="tel" name="phone" required></div>
+          <div class="field"><label>Trade / Category</label>
+            <select name="trade" required>
+              <option value="">Select</option>
+              <option>Electrician</option><option>Plumber</option><option>Welder</option>
+              <option>Mason / Builder</option><option>Carpenter</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label>Location</label><input type="text" name="location" placeholder="e.g. Mbale, Vihiga" required></div>
+        <div class="field"><label>Why should you be featured?</label><textarea name="message" required></textarea></div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Submit Application</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: REGISTER FORM ================= -->
+<div class="modal" id="registerModal" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box" style="max-width:760px">
+    <div class="modal-top"><button class="modal-close" data-close aria-label="Close">✕</button></div>
+    <div class="modal-body">
+      <h3 style="margin-bottom:6px">Create Your Fundi Profile</h3>
+      <p style="color:var(--gray);font-size:.88rem;margin-bottom:20px">Tell customers who you are and what you can do. All fields marked are required.</p>
+
+      <form id="registerForm" action="https://formsubmit.co/fundimtagani@gmail.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New Fundi Profile Submission - Fundi Mtagani Vihiga">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <!-- Personal -->
+        <div class="form-sec">
+          <h4>1. Personal Information</h4>
+          <small>Tell customers who you are.</small>
+          <div class="grid-2">
+            <div class="field"><label>First Name *</label><input type="text" name="first_name" required></div>
+            <div class="field"><label>Last Name *</label><input type="text" name="last_name" required></div>
+          </div>
+          <div class="field">
+            <label>Profile Photo</label>
+            <input type="file" name="profile_photo" accept="image/*">
+            <div class="hint">Use a clear, professional photo. Max total upload 5MB.</div>
+          </div>
+          <div class="grid-2">
+            <div class="field"><label>Phone Number *</label><input type="tel" name="phone" required></div>
+            <div class="field"><label>WhatsApp Number (if different)</label><input type="tel" name="whatsapp"></div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="form-sec">
+          <h4>2. Skills &amp; Services</h4>
+          <small>Show customers what you can do.</small>
+          <div class="field">
+            <label>Main Trade *</label>
+            <div class="radio-row" id="tradeRadios">
+              <label><input type="radio" name="trade" value="Electrician" required> Electrician</label>
+              <label><input type="radio" name="trade" value="Plumber"> Plumber</label>
+              <label><input type="radio" name="trade" value="Mason"> Mason</label>
+              <label><input type="radio" name="trade" value="Welder"> Welder</label>
+              <label><input type="radio" name="trade" value="Carpenter"> Carpenter</label>
+              <label><input type="radio" name="trade" value="Other"> Other</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Specific Services</label>
+            <textarea name="services" id="servicesField" placeholder="e.g. House wiring, electrical repairs, light installation"></textarea>
+          </div>
+        </div>
+
+        <!-- Work arrangement -->
+        <div class="form-sec">
+          <h4>3. Work Arrangement &amp; Experience</h4>
+          <small>How do you work?</small>
+          <div class="field">
+            <label>Work Status *</label>
+            <div class="radio-row">
+              <label><input type="radio" name="work_status" value="Self-employed" required> Self-employed</label>
+              <label><input type="radio" name="work_status" value="Employed"> Employed</label>
+              <label><input type="radio" name="work_status" value="Business / Team"> Business / Team</label>
+              <label><input type="radio" name="work_status" value="Available for both"> Available for both</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Describe Your Experience</label>
+            <textarea name="experience" placeholder="Briefly describe your experience — years in the trade, types of jobs, notable projects."></textarea>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="form-sec">
+          <h4>4. Location &amp; Availability</h4>
+          <small>Where can customers find you?</small>
+          <div class="grid-2">
+            <div class="field"><label>County *</label><input type="text" name="county" value="Vihiga" required></div>
+            <div class="field"><label>Town / Sub-County *</label><input type="text" name="town" placeholder="e.g. Mbale" required></div>
+          </div>
+          <div class="field"><label>Estate / Village</label><input type="text" name="estate" placeholder="e.g. Majengo"></div>
+          <div class="field">
+            <label>Areas You Can Serve</label>
+            <input type="text" name="areas" placeholder="e.g. Maleli, Wanda, Chavakali">
+          </div>
+          <div class="field">
+            <label>Availability *</label>
+            <div class="radio-row">
+              <label><input type="radio" name="availability" value="Available for new jobs" required> Available for new jobs</label>
+              <label><input type="radio" name="availability" value="Currently busy but accepting bookings"> Busy but accepting bookings</label>
+              <label><input type="radio" name="availability" value="Not currently available"> Not currently available</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Portfolio -->
+        <div class="form-sec">
+          <h4>5. Portfolio &amp; Pricing</h4>
+          <small>Show your work and set expectations.</small>
+          <div class="field">
+            <label>Work Samples (Photos)</label>
+            <input type="file" name="work_samples" accept="image/*" multiple>
+            <div class="hint">Videos are submitted on the company WhatsApp number. Max total upload 5MB.</div>
+          </div>
+          <div class="field">
+            <label>Typical Labor Charges</label>
+            <textarea name="charges" placeholder="e.g. Consultation KSh 500, maintenance KSh 1,000, quotations free"></textarea>
+          </div>
+        </div>
+
+        <!-- Certification -->
+        <div class="form-sec">
+          <h4>6. Certification / Qualifications *</h4>
+          <small>Let customers know how you were trained.</small>
+          <div class="field">
+            <div class="radio-row">
+              <label><input type="radio" name="qualification_type" value="Certified" id="qCertified"> I am Certified</label>
+              <label><input type="radio" name="qualification_type" value="Qualified by experience" id="qExperience"> Qualified by Experience</label>
+            </div>
+          </div>
+          <div class="field" id="certUploadWrap" style="display:none">
+            <label>Upload Certificate (PDF or Image)</label>
+            <input type="file" name="certificate" accept="image/*,.pdf">
+          </div>
+          <div class="field" id="expDetailsWrap" style="display:none">
+            <label>Explain Your Experience</label>
+            <textarea name="experience_details" placeholder="Who trained you, where you gained your experience, and what you learned."></textarea>
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-sec">
+          <h4>7. Contact &amp; Submit</h4>
+          <div class="field"><label>Email Address *</label><input type="email" name="email" required></div>
+          <div class="hint" style="margin-bottom:14px">
+            If your total upload is more than 5MB, please reduce the images or send them directly to our WhatsApp number: <strong>+254 712 340 000</strong>.
+          </div>
+          <button class="btn btn-primary" type="submit" style="width:100%">Submit Profile</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ================= MODAL: ABOUT ================= -->
+<div class="modal" id="aboutModal" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box" style="max-width:720px">
+    <div class="modal-top"><button class="modal-close" data-close aria-label="Close">✕</button></div>
+    <div class="modal-body">
+      <h3 style="margin-bottom:14px">About Fundi Mtagani Vihiga</h3>
+      <p style="margin-bottom:14px;color:var(--dark-2);font-size:.94rem">
+        Fundi Mtagani Vihiga was created to solve a simple problem: finding a trustworthy, skilled fundi in Vihiga County was too hard.
+        Word of mouth only goes so far, and customers were often left guessing about who to trust.
+      </p>
+      <p style="margin-bottom:14px;color:var(--dark-2);font-size:.94rem">
+        Our platform brings local tradespeople online — electricians, plumbers, welders, masons and carpenters — with verified profiles,
+        real work samples and direct contact details. Customers can compare, choose and hire with confidence.
+      </p>
+      <p style="margin-bottom:14px;color:var(--dark-2);font-size:.94rem">
+        For fundis, the platform is a shopfront. It helps them reach more customers, showcase completed work and build a reputation
+        that travels beyond their own village.
+      </p>
+      <p style="color:var(--dark-2);font-size:.94rem">
+        We are proudly local. Every profile is reviewed before publishing, and we continue to grow the platform one fundi at a time.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   1. HEADER — shrink on scroll + mobile menu
+   ========================================================= */
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('shrink', window.scrollY > 40);
+}, { passive: true });
+
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  menuToggle.textContent = nav.classList.contains('open') ? '✕' : '☰';
+});
+nav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuToggle.textContent = '☰';
+  });
+});
+
+/* Mobile dropdown toggle */
+const catDropBtn = document.getElementById('catDropBtn');
+catDropBtn.addEventListener('click', (e) => {
+  if (window.innerWidth <= 1080) {
+    e.preventDefault();
+    catDropBtn.parentElement.classList.toggle('open');
+  }
+});
+
+/* =========================================================
+   2. HERO — category dropdown + keyword search
+   ========================================================= */
+const categoryKeywords = {
+  electrician: 'electricians', electricians: 'electricians', electrical: 'electricians',
+  plumber: 'plumbers', plumbers: 'plumbers', plumbing: 'plumbers',
+  welder: 'welders', welders: 'welders', welding: 'welders',
+  mason: 'masons', masons: 'masons', builder: 'masons', builders: 'masons',
+  carpenter: 'carpenters', carpenters: 'carpenters', carpentry: 'carpenters'
+};
+const locationKeywords = ['mbale', 'chavakali', 'sabatia', 'emuhaya', 'hamisi', 'luanda'];
+
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return false;
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  el.classList.remove('flash');
+  void el.offsetWidth;
+  el.classList.add('flash');
+  setTimeout(() => el.classList.remove('flash'), 1600);
+  return true;
+}
+
+document.getElementById('heroCategory').addEventListener('change', (e) => {
+  if (e.target.value) scrollToSection(e.target.value);
+});
+
+function runHeroSearch() {
+  const q = document.getElementById('heroSearch').value.toLowerCase().trim();
+  if (!q) return;
+
+  let cat = null;
+  for (const key in categoryKeywords) {
+    if (q.includes(key)) { cat = categoryKeywords[key]; break; }
+  }
+  const loc = locationKeywords.find(l => q.includes(l));
+
+  if (cat) {
+    scrollToSection(cat);
+  } else if (loc) {
+    scrollToSection('locations');
+    setTimeout(() => openLocationModal(loc), 600);
+  } else {
+    alert('No match found. Try something like "Electricians in Mbale" or pick a category from the dropdown.');
+  }
+}
+document.getElementById('heroSearchBtn').addEventListener('click', runHeroSearch);
+document.getElementById('heroSearch').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') { e.preventDefault(); runHeroSearch(); }
+});
+
+/* =========================================================
+   3. FEATURED CAROUSEL — auto-advance every 4 seconds
+   ========================================================= */
+const track = document.getElementById('featuredTrack');
+let autoTimer = null;
+
+function nextFeaturedSlide() {
+  const cards = Array.from(track.children);
+  if (!cards.length) return;
+  const current = track.scrollLeft;
+  const maxScroll = track.scrollWidth - track.clientWidth;
+
+  if (current >= maxScroll - 12) {
+    track.scrollTo({ left: 0, behavior: 'smooth' });
+    return;
+  }
+  let target = null;
+  for (const card of cards) {
+    if (card.offsetLeft > current + 12) { target = card.offsetLeft; break; }
+  }
+  track.scrollTo({ left: target !== null ? target : 0, behavior: 'smooth' });
+}
+
+function startFeaturedAuto() {
+  clearInterval(autoTimer);
+  autoTimer = setInterval(nextFeaturedSlide, 4000);
+}
+startFeaturedAuto();
+
+['pointerdown', 'touchstart', 'wheel', 'keydown'].forEach(evt => {
+  track.addEventListener(evt, () => {
+    clearInterval(autoTimer);
+    setTimeout(startFeaturedAuto, 8000);
+  }, { passive: true });
+});
+
+/* =========================================================
+   4. SHARED PROFILE MODAL
+   ========================================================= */
+const profileModal = document.getElementById('profileModal');
+const profileModalBody = document.getElementById('profileModalBody');
+
+function openProfileModal(btn) {
+  const d = btn.dataset;
+  const phoneDigits = (d.phone || '').replace(/\D/g, '');
+
+  const media = d.video
+    ? `<video src="${d.video}" controls playsinline></video>`
+    : `<img src="${d.img}" alt="${d.name}">`;
+
+  const gallery = (d.gallery || '').split(',').filter(Boolean)
+    .map(src => `<img src="${src}" alt="Work sample" loading="lazy">`).join('');
+
+  profileModalBody.innerHTML = `
+    <div class="pm-media">${media}</div>
+    <div class="pm-info">
+      <div class="pm-head">
+        <h3>${d.name}</h3>
+        <span class="chip">${d.cat}</span>
+      </div>
+      <p class="pm-loc">📍 ${d.loc}</p>
+      <p>${d.bio}</p>
+      <div class="pm-meta">
+        <div><strong>Typical Charges</strong>${d.price || 'Negotiable'}</div>
+        <div><strong>Phone</strong>${d.phone || '—'}</div>
+      </div>
+      <div class="pm-actions">
+        ${d.phone ? `<a class="btn btn-primary" href="tel:${d.phone}">📞 Call</a>` : ''}
+        ${phoneDigits ? `<a class="btn btn-whatsapp" href="https://wa.me/${phoneDigits}" target="_blank" rel="noopener">WhatsApp</a>` : ''}
+      </div>
+      ${gallery ? `<h4 style="margin-bottom:4px">Recent Work</h4><div class="pm-gallery">${gallery}</div>` : ''}
+    </div>
+  `;
+  openModal(profileModal);
+}
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-profile]');
+  if (btn) { e.preventDefault(); openProfileModal(btn); }
+});
+
+/* =========================================================
+   5. MODAL HELPERS
+   ========================================================= */
+function openModal(modal) {
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeAllModals() {
+  document.querySelectorAll('.modal.open').forEach(m => m.classList.remove('open'));
+  document.body.style.overflow = '';
+}
+document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-close]')) closeAllModals();
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeAllModals();
+});
+
+/* =========================================================
+   6. GALLERY — tabs + lightbox
+   ========================================================= */
+const galleryData = {
+  electricians: [
+    { img: 'https://picsum.photos/seed/gal-e1/700/700', name: 'Peter Mwangi', work: 'Complete house wiring', loc: 'Mbale', phone: '+254712340011' },
+    { img: 'https://picsum.photos/seed/gal-e2/700/700', name: 'Grace Anyango', work: 'Solar panel installation', loc: 'Chavakali', phone: '+254712340012' },
+    { img: 'https://picsum.photos/seed/gal-e3/700/700', name: 'Samuel Ochieng', work: 'Security light setup', loc: 'Luanda', phone: '+254712340013' },
+    { img: 'https://picsum.photos/seed/gal-e4/700/700', name: 'James Otieno', work: 'Distribution board upgrade', loc: 'Mbale', phone: '+254712340001' },
+    { img: 'https://picsum.photos/seed/gal-e5/700/700', name: 'Grace Anyango', work: 'Shop lighting installation', loc: 'Chavakali', phone: '+254712340012' },
+    { img: 'https://picsum.photos/seed/gal-e6/700/700', name: 'Peter Mwangi', work: 'Socket installation', loc: 'Mbale', phone: '+254712340011' }
+  ],
+  plumbers: [
+    { img: 'https://picsum.photos/seed/gal-p1/700/700', name: 'Mercy Achieng', work: 'Bathroom fitting', loc: 'Chavakali', phone: '+254712340022' },
+    { img: 'https://picsum.photos/seed/gal-p2/700/700', name: 'David Otieno', work: 'Water tank installation', loc: 'Mbale', phone: '+254712340021' },
+    { img: 'https://picsum.photos/seed/gal-p3/700/700', name: 'Brian Wekesa', work: 'Drainage repair', loc: 'Emuhaya', phone: '+254712340023' },
+    { img: 'https://picsum.photos/seed/gal-p4/700/700', name: 'Mercy Achieng', work: 'Leak detection', loc: 'Chavakali', phone: '+254712340022' },
+    { img: 'https://picsum.photos/seed/gal-p5/700/700', name: 'David Otieno', work: 'Kitchen sink fitting', loc: 'Mbale', phone: '+254712340021' },
+    { img: 'https://picsum.photos/seed/gal-p6/700/700', name: 'Brian Wekesa', work: 'Pipe replacement', loc: 'Emuhaya', phone: '+254712340023' }
+  ],
+  welders: [
+    { img: 'https://picsum.photos/seed/gal-w1/700/700', name: 'Joseph Ouma', work: 'Custom main gate', loc: 'Luanda', phone: '+254712340031' },
+    { img: 'https://picsum.photos/seed/gal-w2/700/700', name: 'Faith Njeri', work: 'Window grills', loc: 'Hamisi', phone: '+254712340032' },
+    { img: 'https://picsum.photos/seed/gal-w3/700/700', name: 'Kelvin Barasa', work: 'Metal door fabrication', loc: 'Sabatia', phone: '+254712340033' },
+    { img: 'https://picsum.photos/seed/gal-w4/700/700', name: 'Joseph Ouma', work: 'Security gate', loc: 'Luanda', phone: '+254712340031' },
+    { img: 'https://picsum.photos/seed/gal-w5/700/700', name: 'Faith Njeri', work: 'Metal furniture', loc: 'Hamisi', phone: '+254712340032' },
+    { img: 'https://picsum.photos/seed/gal-w6/700/700', name: 'Kelvin Barasa', work: 'Steel structure repair', loc: 'Sabatia', phone: '+254712340033' }
+  ],
+  masons: [
+    { img: 'https://picsum.photos/seed/gal-m1/700/700', name: 'Ann Muthoni', work: 'Wall plastering', loc: 'Sabatia', phone: '+254712340041' },
+    { img: 'https://picsum.photos/seed/gal-m2/700/700', name: 'Peter Odhiambo', work: 'Foundation work', loc: 'Mbale', phone: '+254712340042' },
+    { img: 'https://picsum.photos/seed/gal-m3/700/700', name: 'Isaac Wafula', work: 'House renovation', loc: 'Hamisi', phone: '+254712340043' },
+    { img: 'https://picsum.photos/seed/gal-m4/700/700', name: 'Ann Muthoni', work: 'Floor tiling', loc: 'Sabatia', phone: '+254712340041' },
+    { img: 'https://picsum.photos/seed/gal-m5/700/700', name: 'Peter Odhiambo', work: 'Concrete slab', loc: 'Mbale', phone: '+254712340042' },
+    { img: 'https://picsum.photos/seed/gal-m6/700/700', name: 'Isaac Wafula', work: 'Wall construction', loc: 'Hamisi', phone: '+254712340043' }
+  ],
+  carpenters: [
+    { img: 'https://picsum.photos/seed/gal-c1/700/700', name: 'Michael Kiptoo', work: 'Custom wardrobe', loc: 'Mbale', phone: '+254712340051' },
+    { img: 'https://picsum.photos/seed/gal-c2/700/700', name: 'Esther Wanjiku', work: 'Gypsum ceiling', loc: 'Chavakali', phone: '+254712340052' },
+    { img: 'https://picsum.photos/seed/gal-c3/700/700', name: 'Daniel Musyoka', work: 'Furniture restoration', loc: 'Luanda', phone: '+254712340053' },
+    { img: 'https://picsum.photos/seed/gal-c4/700/700', name: 'Michael Kiptoo', work: 'Kitchen cabinets', loc: 'Mbale', phone: '+254712340051' },
+    { img: 'https://picsum.photos/seed/gal-c5/700/700', name: 'Esther Wanjiku', work: 'Door installation', loc: 'Chavakali', phone: '+254712340052' },
+    { img: 'https://picsum.photos/seed/gal-c6/700/700', name: 'Daniel Musyoka', work: 'Shelving unit', loc: 'Luanda', phone: '+254712340053' }
+  ]
+};
+
+const galleryGrid = document.getElementById('galleryGrid');
+const galleryTabs = document.getElementById('galleryTabs');
+let currentGalleryCat = 'electricians';
+let currentGalleryIndex = 0;
+
+function renderGallery(cat) {
+  currentGalleryCat = cat;
+  const items = galleryData[cat] || [];
+  galleryGrid.innerHTML = items.map((item, i) => `
+    <div class="gallery-item" data-gallery-index="${i}">
+      <img src="${item.img}" alt="${item.work} by ${item.name}" loading="lazy">
+    </div>
+  `).join('');
+}
+
+galleryTabs.addEventListener('click', (e) => {
+  const tab = e.target.closest('.tab');
+  if (!tab) return;
+  galleryTabs.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  renderGallery(tab.dataset.tab);
+});
+
+galleryGrid.addEventListener('click', (e) => {
+  const item = e.target.closest('.gallery-item');
+  if (!item) return;
+  currentGalleryIndex = Number(item.dataset.galleryIndex);
+  openLightbox();
+});
+
+const galleryModal = document.getElementById('galleryModal');
+const lbImage = document.getElementById('lbImage');
+const lbCaption = document.getElementById('lbCaption');
+
+function openLightbox() {
+  const items = galleryData[currentGalleryCat];
+  const item = items[currentGalleryIndex];
+  lbImage.src = item.img;
+  lbImage.alt = `${item.work} by ${item.name}`;
+  lbCaption.innerHTML = `
+    <h4>${item.work}</h4>
+    <p><strong>${item.name}</strong> · ${item.loc} · <a href="https://wa.me/${item.phone.replace(/\D/g,'')}" target="_blank" rel="noopener" style="color:var(--whatsapp);font-weight:700">WhatsApp</a></p>
+  `;
+  openModal(galleryModal);
+}
+
+document.getElementById('lbPrev').addEventListener('click', () => {
+  const items = galleryData[currentGalleryCat];
+  currentGalleryIndex = (currentGalleryIndex - 1 + items.length) % items.length;
+  openLightbox();
+});
+document.getElementById('lbNext').addEventListener('click', () => {
+  const items = galleryData[currentGalleryCat];
+  currentGalleryIndex = (currentGalleryIndex + 1) % items.length;
+  openLightbox();
+});
+
+renderGallery('electricians');
+
+/* =========================================================
+   7. GENERIC TABS (services)
+   ========================================================= */
+document.querySelectorAll('[data-tabs]').forEach(tabs => {
+  const name = tabs.dataset.tabs;
+  const panels = document.querySelector(`[data-panels="${name}"]`);
+  tabs.addEventListener('click', (e) => {
+    const tab = e.target.closest('.tab');
+    if (!tab) return;
+    tabs.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    panels.querySelectorAll('.tab-panel').forEach(p => {
+      p.classList.toggle('active', p.dataset.panel === tab.dataset.tab);
+    });
+  });
+});
+
+/* =========================================================
+   8. LOCATION MODAL
+   ========================================================= */
+const locationFundis = {
+  mbale: [
+    { name: 'James Otieno', cat: 'electricians', phone: '+254712340001' },
+    { name: 'Peter Mwangi', cat: 'electricians', phone: '+254712340011' },
+    { name: 'David Otieno', cat: 'plumbers', phone: '+254712340021' },
+    { name: 'Peter Odhiambo', cat: 'masons', phone: '+254712340042' },
+    { name: 'Michael Kiptoo', cat: 'carpenters', phone: '+254712340051' }
+  ],
+  chavakali: [
+    { name: 'Grace Anyango', cat: 'electricians', phone: '+254712340012' },
+    { name: 'Mercy Achieng', cat: 'plumbers', phone: '+254712340022' },
+    { name: 'Esther Wanjiku', cat: 'carpenters', phone: '+254712340052' }
+  ],
+  sabatia: [
+    { name: 'Ann Muthoni', cat: 'masons', phone: '+254712340041' },
+    { name: 'Kelvin Barasa', cat: 'welders', phone: '+254712340033' },
+    { name: 'Samuel Ochieng', cat: 'electricians', phone: '+254712340013' }
+  ],
+  emuhaya: [
+    { name: 'Brian Wekesa', cat: 'plumbers', phone: '+254712340023' },
+    { name: 'Faith Njeri', cat: 'welders', phone: '+254712340032' }
+  ],
+  hamisi: [
+    { name: 'Faith Njeri', cat: 'welders', phone: '+254712340032' },
+    { name: 'Isaac Wafula', cat: 'masons', phone: '+254712340043' },
+    { name: 'Daniel Musyoka', cat: 'carpenters', phone: '+254712340053' }
+  ],
+  luanda: [
+    { name: 'Joseph Ouma', cat: 'welders', phone: '+254712340031' },
+    { name: 'Samuel Ochieng', cat: 'electricians', phone: '+254712340013' },
+    { name: 'Daniel Musyoka', cat: 'carpenters', phone: '+254712340053' }
+  ]
+};
+
+const CATEGORIES = [
+  { key: 'electricians', label: 'Electricians' },
+  { key: 'plumbers', label: 'Plumbers' },
+  { key: 'welders', label: 'Welders' },
+  { key: 'masons', label: 'Masons' },
+  { key: 'carpenters', label: 'Carpenters' }
+];
+
+const locationModal = document.getElementById('locationModal');
+const locTitle = document.getElementById('locTitle');
+const locTabs = document.getElementById('locTabs');
+const locList = document.getElementById('locList');
+let activeLocation = 'mbale';
+
+function renderLocationList(cat) {
+  const items = (locationFundis[activeLocation] || []).filter(f => f.cat === cat);
+  if (!items.length) {
+    locList.innerHTML = `<p style="color:var(--gray);font-size:.9rem;grid-column:1/-1">No fundis listed in this category for this location yet.</p>`;
+    return;
+  }
+  locList.innerHTML = items.map(f => `
+    <div class="loc-item">
+      <strong>${f.name}</strong>
+      <small>${CATEGORIES.find(c => c.key === f.cat)?.label || f.cat}</small>
+      <a href="https://wa.me/${f.phone.replace(/\D/g, '')}" target="_blank" rel="noopener">WhatsApp · ${f.phone}</a>
+    </div>
+  `).join('');
+}
+
+function openLocationModal(key) {
+  activeLocation = key;
+  locTitle.textContent = `Fundis in ${key.charAt(0).toUpperCase() + key.slice(1)}`;
+  locTabs.innerHTML = CATEGORIES.map((c, i) =>
+    `<button class="tab ${i === 0 ? 'active' : ''}" data-loc-cat="${c.key}">${c.label}</button>`
+  ).join('');
+  renderLocationList('electricians');
+  openModal(locationModal);
+}
+
+locTabs.addEventListener('click', (e) => {
+  const tab = e.target.closest('.tab');
+  if (!tab) return;
+  locTabs.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  renderLocationList(tab.dataset.locCat);
+});
+
+document.querySelectorAll('[data-location]').forEach(btn => {
+  btn.addEventListener('click', () => openLocationModal(btn.dataset.location));
+});
+
+/* =========================================================
+   9. REGISTER / FEATURED / ABOUT MODALS
+   ========================================================= */
+document.querySelectorAll('[data-open-register]').forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal(document.getElementById('registerModal'));
+  });
+});
+document.querySelectorAll('[data-open-featured-form]').forEach(el => {
+  el.addEventListener('click', () => openModal(document.getElementById('featuredFormModal')));
+});
+document.querySelectorAll('[data-open-about]').forEach(el => {
+  el.addEventListener('click', () => openModal(document.getElementById('aboutModal')));
+});
+
+/* Dynamic services placeholder */
+const serviceField = document.getElementById('servicesField');
+const placeholders = {
+  Electrician: 'e.g. House wiring, electrical repairs, light installation',
+  Plumber: 'e.g. Pipe installation, leak detection, tap repairs',
+  Mason: 'e.g. Wall construction, plastering, tiling',
+  Welder: 'e.g. Gate fabrication, metal doors, grills',
+  Carpenter: 'e.g. Furniture making, door installation, cabinets',
+  Other: 'Describe the services you offer'
+};
+document.querySelectorAll('input[name="trade"]').forEach(radio => {
+  radio.addEventListener('change', () => {
+    serviceField.placeholder = placeholders[radio.value] || placeholders.Other;
+  });
+});
+
+/* Certification conditional fields */
+const qCertified = document.getElementById('qCertified');
+const qExperience = document.getElementById('qExperience');
+const certUploadWrap = document.getElementById('certUploadWrap');
+const expDetailsWrap = document.getElementById('expDetailsWrap');
+function toggleCertFields() {
+  certUploadWrap.style.display = qCertified.checked ? 'block' : 'none';
+  expDetailsWrap.style.display = qExperience.checked ? 'block' : 'none';
+}
+qCertified.addEventListener('change', toggleCertFields);
+qExperience.addEventListener('change', toggleCertFields);
+
+/* 5MB upload guard */
+document.getElementById('registerForm').addEventListener('submit', (e) => {
+  let total = 0;
+  document.querySelectorAll('#registerForm input[type="file"]').forEach(inp => {
+    for (const file of inp.files) total += file.size;
+  });
+  if (total > 5 * 1024 * 1024) {
+    e.preventDefault();
+    alert('Your uploads exceed 5MB. Please reduce the number/size of the images, or send them directly to our WhatsApp number: +254 712 340 000.');
+  }
+});
+
+/* =========================================================
+   10. FAQ ACCORDION
+   ========================================================= */
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
+  });
+});
+
+/* =========================================================
+   11. MISC
+   ========================================================= */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
